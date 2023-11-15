@@ -19,7 +19,7 @@ int main() {
 		// and the most update.
 		ipc_mq.MqReceive(str);
 
-		// Assume maximum speed range is 200
+		// Maximum speed is set to 200.
 		random = 0 + (rand() % 201);
 		std::cout<<"Generated speed : "<<random<<std::endl;
 
