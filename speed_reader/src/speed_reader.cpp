@@ -6,7 +6,7 @@ int main()
 {
 	std::string speedmsg;
     int speed = 0;
-	IPCMqManager ipc_mq("speed");
+    ipc::mqueue::IPCMqManager ipc_mq("speed");
 
 	std::cout << "Welcome to SpeedReader App!" << std::endl;
 	while(true)

@@ -14,6 +14,9 @@
 #include <cstring>
 #include "utils.hpp"
 
+namespace ipc {
+namespace mqueue {
+
 class IPCMqManager
 {
     public:
@@ -27,8 +30,11 @@ class IPCMqManager
         mqd_t mq_;
         struct mq_attr mqAttr_;
         const std::string queueName_;
+        // Queue size is 1 to make speed readings realtime and the most update.
         static const int MAX_MESSAGES = 1;
         static const int MAX_MSG_SIZE = 256;
 };
 
+}//mqueue
+}//ipc
 #endif /* _IPC_LIB_PUBLIC_IPC_MQ_HPP_ */

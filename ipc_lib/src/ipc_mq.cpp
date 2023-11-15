@@ -1,5 +1,7 @@
 #include "ipc_mq.hpp"
 
+namespace ipc {
+namespace mqueue {
 
 IPCMqManager::IPCMqManager(const std::string& queueName) : queueName_(queueName)
 {
@@ -64,3 +66,7 @@ bool IPCMqManager::MqReceive(std::string& message)
     message = buffer;
     return true;
 }
+
+
+}// mqueue
+}// ipc
