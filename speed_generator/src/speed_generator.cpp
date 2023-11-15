@@ -13,6 +13,10 @@ int main() {
 	std::cout << "Welcome to SpeedGenerator App!" << std::endl;
 	while(true)
 	{
+		// Speed generator reads the speed from the queue before wirting it to make the queue empty to ensure that it  
+		// can wirte the speed into the queue , this is because the two apps are asynchronous and if speed reader app 
+		// has not yet read the speed , speed writer will block due to queue size is 1 to make speed readings realtime 
+		// and the most update.
 		ipc_mq.MqReceive(str);
 		random = 0 + (rand() % 201);
 		std::cout<<"Generated speed : "<<random<<std::endl;
